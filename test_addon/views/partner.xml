@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="test_addon.form_partner_inherit">
+            <field name="name">test_addon.form_partner_inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <field name="vat" position="after">
+                    <field name="npwp" />
+                </field>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="test_addon.tree_partner_inherit">
+            <field name="name">test_addon.tree_partner_inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree" />
+            <field name="arch" type="xml">
+                <field name="phone" position="after">
+                    <field name="npwp" />
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>
