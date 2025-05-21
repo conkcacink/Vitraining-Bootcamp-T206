@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="record_name">
+            <field name="name">partner_invoice_form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="action_create_invoice" type="object" string="Create Invoice" />
+                </xpath>
+            </field>
+        </record>
+        <record id="action_create_invoice" model="ir.actions.server">
+            <field name="name">Create Invoice</field>
+            <field name="model_id" ref="base.model_res_partner" />
+            <field name="binding_model_id" ref="base.model_res_partner" />
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                    action = records.action_create_invoice()
+            </field>
+        </record>
+    </data>
+</odoo>
