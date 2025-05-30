@@ -1,0 +1,58 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="vit_discount_total">
+      <field name="name">vit_discount_total</field>
+      <field name="model">account.move</field>
+      <field name="inherit_id" ref="account.view_move_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='tax_totals']" position="before">
+          <field name="discount_total" />
+        </xpath>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="test_invoice_global.action_window">
+      <field name="name">test_invoice_global window</field>
+      <field name="res_model">test_invoice_global.test_invoice_global</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="test_invoice_global.action_server">
+      <field name="name">test_invoice_global server</field>
+      <field name="model_id" ref="model_test_invoice_global_test_invoice_global"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="test_invoice_global" id="test_invoice_global.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="test_invoice_global.menu_1" parent="test_invoice_global.menu_root"/>
+    <menuitem name="Menu 2" id="test_invoice_global.menu_2" parent="test_invoice_global.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="test_invoice_global.menu_1_list" parent="test_invoice_global.menu_1"
+              action="test_invoice_global.action_window"/>
+    <menuitem name="Server to list" id="test_invoice_global" parent="test_invoice_global.menu_2"
+              action="test_invoice_global.action_server"/>
+-->
+  </data>
+</odoo>
