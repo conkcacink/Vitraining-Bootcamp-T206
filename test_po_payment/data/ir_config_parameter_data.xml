@@ -1,0 +1,8 @@
+<odoo>
+    <data noupdate="1">
+        <record id="param_auto_post_advance_payments" model="ir.config_parameter">
+            <field name="key">auto_post_advance_payments</field>
+            <field name="value">True</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_test_po_payment_test_po_payment_1,test_po_payment.account_payment,account.model_account_payment,purchase.group_purchase_user,1,1,1,0
+access_test_po_payment_test_po_payment_2,test_po_payment.account_payment_method,account.model_account_payment_method,purchase.group_purchase_user,1,0,0,0
+access_test_po_payment_test_po_payment_3,test_po_payment.wizard_purchase_advance,model_account_voucher_wizard_purchase,purchase.group_purchase_user,1,1,1,0

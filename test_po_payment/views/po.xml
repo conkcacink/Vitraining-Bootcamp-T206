@@ -1,0 +1,52 @@
+<odoo>
+    <data>
+        <record id="purchase_order_form" model="ir.ui.view">
+            <field name="name">purchase.order.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form" />
+            <field name="arch" type="xml">
+
+                <!-- Insert the Pay Advance Purchase button -->
+                <xpath expr="//button[@name='button_draft']" position="after">
+                    <button
+                        name="%(action_view_account_voucher_wizard)d"
+                        string="Pay Advance Purchase"
+                        type="action"
+                        groups="account.group_account_invoice"
+                        attrs="{'invisible':['|',('state','in',['done','cancel']),('amount_residual','=',0)]}"
+                    />
+                </xpath>
+
+                <!-- Add notebook tab for advance payments -->
+                <xpath expr="//sheet/notebook" position="inside">
+                    <page string="Advance Payments" groups="account.group_account_invoice">
+                        <field
+                            name="account_payment_ids"
+                            nolabel="1"
+                            colspan="4"
+                            context="{'form_view_ref' : 'account.view_account_payment_form', 'tree_view_ref' : 'account.view_account_payment'}"
+                        />
+                    </page>
+                </xpath>
+                <!-- context="{}" -->
+                <!-- readonly="1" -->
+                <!-- options="{'no_create': True, 'no_create_edit': True}" -->
+                <!-- editable="top" -->
+                <!-- Add amount_residual below tax_totals -->
+                <xpath expr="//field[@name='tax_totals']" position="after">
+                    <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                        <label for="amount_residual" />
+                    </div>
+                    <field
+                        name="amount_residual"
+                        nolabel="1"
+                        class="oe_subtotal_footer_separator"
+                        widget="monetary"
+                        options="{'currency_field': 'currency_id'}"
+                    />
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>
