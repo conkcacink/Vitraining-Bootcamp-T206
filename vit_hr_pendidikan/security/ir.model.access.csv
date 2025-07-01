@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_admin_vit_gelar,access_admin_vit_gelar,model_vit_gelar,base.group_system,1,1,1,1
+access_admin_vit_riwayat_pendidikan,access_admin_vit_riwayat_pendidikan,model_vit_riwayat_pendidikan,base.group_system,1,1,1,1
+access_admin_vit_level,access_admin_vit_level,model_vit_level,base.group_system,1,1,1,1
+
+access_user_vit_gelar,access_user_vit_gelar,model_vit_gelar,base.group_user,1,1,1,0
+access_user_vit_riwayat_pendidikan,access_user_vit_riwayat_pendidikan,model_vit_riwayat_pendidikan,base.group_user,1,1,1,0
+access_user_vit_level,access_user_vit_level,model_vit_level,base.group_user,1,1,1,0

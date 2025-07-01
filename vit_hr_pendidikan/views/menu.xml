@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <menuitem
+            id="test_hr_pendidikan_config_menu"
+            name="Education History"
+            sequence="1000"
+            parent="hr.menu_human_resources_configuration" />
+    </data>
+</odoo>

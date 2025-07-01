@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+        <record id="view_employee_form" model="ir.ui.view">
+            <field name="name">employee_form</field>
+            <field name="model">hr.employee</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="hr.view_employee_form" />
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page id="riwayat" string="Education History">
+                        <field name="riwayat_pendidikan_ids">
+                            <tree>
+                                <field name="gelar" />
+                                <field name="institusi_id" />
+                                <field name="tahun_mulai" />
+                                <field name="tahun_selesai" />
+                                <field name="ipk" />
+                                <field name="keterangan" />
+                            </tree>
+                            <form>
+                                <group>
+                                    <group>
+                                        <field name="gelar" />
+                                        <field name="institusi_id" domain="[('is_institusi','=', True)]" />
+                                    </group>
+                                    <group>
+                                        <field name="tahun_mulai" />
+                                        <field name="tahun_selesai" />
+                                        <field name="ipk" />
+                                        <field name="keterangan" />
+                                    </group>
+                                </group>
+                            </form>
+                        </field>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    </data>
+</odoo>

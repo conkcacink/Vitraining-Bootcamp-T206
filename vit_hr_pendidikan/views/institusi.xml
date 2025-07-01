@@ -1,0 +1,34 @@
+<odoo>
+    <data>
+        <record id="view_institusi_form" model="ir.ui.view">
+            <field name="name">institusi_form</field>
+            <field name="model">res.partner</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page id="institusi" string="Institusi">
+                        <group>
+                            <field name="is_institusi" />
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+        <record id="action_institusi" model="ir.actions.act_window">
+            <field name="name">Institusi</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="context">{"default_is_institusi":1}</field>
+            <field name="domain">[("is_institusi","=", True)]</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem 
+            id="menu_institusi" 
+            name="Institusi" 
+            parent="test_hr_pendidikan_config_menu" 
+            action="action_institusi"
+            sequence="40"
+        />
+    </data>
+</odoo>

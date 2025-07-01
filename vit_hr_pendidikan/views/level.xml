@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+        <record id="view_vit_level_tree" model="ir.ui.view">
+            <field name="name">vit_level_tree</field>
+            <field name="model">vit.level</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Level">
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+        <record id="view_vit_level_form" model="ir.ui.view">
+            <field name="name">vit_level_form</field>
+            <field name="model">vit.level</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Level">
+                    <group>
+                        <field name="name" />
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="action_level" model="ir.actions.act_window">
+            <field name="name">Level</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">vit.level</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem 
+            id="menu_level" 
+            name="Level" 
+            parent="test_hr_pendidikan_config_menu"
+            action="action_level"
+            sequence="60"
+        />
+    </data>
+</odoo>

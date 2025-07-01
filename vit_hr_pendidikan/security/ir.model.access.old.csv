@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vit_hr_pendidikan_vit_hr_pendidikan,vit_hr_pendidikan.vit_hr_pendidikan,model_vit_hr_pendidikan_vit_hr_pendidikan,base.group_user,1,1,1,1

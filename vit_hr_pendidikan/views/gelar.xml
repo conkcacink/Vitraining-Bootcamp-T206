@@ -1,0 +1,43 @@
+<odoo>
+    <data>
+        <record id="view_vit_gelar_tree" model="ir.ui.view">
+            <field name="name">vit_gelar_tree</field>
+            <field name="model">vit.gelar</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Gelar">
+                    <field name="name" />
+                    <field name="level_id" />
+                </tree>
+            </field>
+        </record>
+        <record id="view_vit_gelar_form" model="ir.ui.view">
+            <field name="name">vit_gelar_form</field>
+            <field name="model">vit.gelar</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Gelar">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="level_id" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_gelar" model="ir.actions.act_window">
+            <field name="name">Gelar</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">vit.gelar</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem
+            id="menu_gelar"
+            name="Gelar"
+            parent="test_hr_pendidikan_config_menu"
+            action="action_gelar"
+            sequence="30"
+        />
+    </data>
+</odoo>
